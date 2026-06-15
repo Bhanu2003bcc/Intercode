@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://aws-1-ap-southeast-2.pooler.supabase.com:5432/postgres?user=postgres.xkpthxybrozesdcjeubk&password=GOuXzlJrEkmEJazM&sslmode=require}
+    username: ${DB_USERNAME:postgres.xkpthxybrozesdcjeubk}
+    password: ${DB_PASSWORD:GOuXzlJrEkmEJazM}
+
+  flyway:
+    locations: classpath:db/migration/core,classpath:db/migration/dev
+
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID:your-google-client-id}
+            client-secret: ${GOOGLE_CLIENT_SECRET:your-google-client-secret}
+
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: ${SMTP_USERNAME:bhanupratapsingh2939522@gmail.com}
+    password: ${SMTP_PASSWORD:aucyclwpqymkfxrf}
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:7a9f3c2e8b1d6f4a0e5c9b7d3f1a8e6c2b4d7f9a1c3e5b8d0f2a4c6e8b1d3f56}

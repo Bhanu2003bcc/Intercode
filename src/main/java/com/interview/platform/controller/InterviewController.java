@@ -55,8 +55,8 @@ public class InterviewController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN')")
-    public ResponseEntity<Void> delete(@PathVariable UUID id) {
-        interviewService.delete(id);
+    public ResponseEntity<Void> delete(@PathVariable UUID id, @AuthenticationPrincipal User user) {
+        interviewService.delete(id, user);
         return ResponseEntity.noContent().build();
     }
 }

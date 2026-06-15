@@ -12,9 +12,11 @@ com/interview/platform/models/Interview.class
 com/interview/platform/response/ExecutionResult.class
 com/interview/platform/request/ExecutionRequest.class
 com/interview/platform/controller/InterviewController.class
+com/interview/platform/util/InterviewEventHandler.class
 com/interview/platform/config/WebSocketConfig$1.class
 com/interview/platform/request/CreateInterviewRequest.class
 com/interview/platform/service/AuthService.class
+com/interview/platform/util/InterviewCreatedEvent.class
 com/interview/platform/websocket/RedisMessageSubscriber.class
 com/interview/platform/enums/Role.class
 com/interview/platform/models/Submission.class
@@ -24,6 +26,7 @@ com/interview/platform/InterviewPlatformApplication.class
 com/interview/platform/service/JwtService.class
 com/interview/platform/repository/InterviewRepository.class
 com/interview/platform/controller/RoomController.class
+com/interview/platform/exception/InterviewNotFoundException.class
 com/interview/platform/request/LoginRequest.class
 com/interview/platform/dto/UserDTO.class
 com/interview/platform/config/RedisConfig.class
@@ -36,6 +39,7 @@ com/interview/platform/service/InterviewService.class
 com/interview/platform/security/CustomOAuth2User.class
 com/interview/platform/service/CustomUserDetailsService.class
 com/interview/platform/request/RegisterRequest.class
+com/interview/platform/request/UpdateInterviewRequest.class
 com/interview/platform/enums/Language.class
 com/interview/platform/security/OAuth2AuthenticationSuccessHandler.class
 com/interview/platform/models/Interview$InterviewBuilder.class
@@ -45,6 +49,7 @@ com/interview/platform/models/User$UserBuilder.class
 com/interview/platform/dto/InterviewDTO.class
 com/interview/platform/config/SecurityConfig.class
 com/interview/platform/enums/Provider.class
+com/interview/platform/exception/InterviewConflictException.class
 com/interview/platform/config/WebSocketConfig.class
 com/interview/platform/service/EmailService.class
 com/interview/platform/service/CodeExecutionService.class

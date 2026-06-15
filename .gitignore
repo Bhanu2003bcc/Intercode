@@ -1,0 +1,23 @@
+# IDE and System Files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Backend Build & Package
+backend/target/
+backend/*.log
+backend/out/
+.gradle/
+build/
+
+
+# Database/Environment Configs
+*.env
+*.local
+/tmp/code_exec

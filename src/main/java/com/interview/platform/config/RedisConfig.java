@@ -3,6 +3,9 @@ package com.interview.platform.config;
 import com.interview.platform.websocket.RedisMessageSubscriber;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.security.SecureRandom;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
@@ -49,5 +52,9 @@ public class RedisConfig {
         return new ObjectMapper()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false)
                 .findAndRegisterModules();
+    }
+    @Bean
+    public SecureRandom secureRandom() {
+        return new SecureRandom();
     }
 }
