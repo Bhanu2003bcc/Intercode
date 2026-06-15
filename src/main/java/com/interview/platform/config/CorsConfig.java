@@ -19,12 +19,26 @@ public class CorsConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of(
-            frontendUrl,
-            "http://localhost:5173",
-            "http://localhost:3000",
-            "http://localhost:80"
-        ));
+        List<String> allowedOrigins = new java.util.ArrayList<>();
+        
+        if (frontendUrl != null && !frontendUrl.trim().isEmpty()) {
+            for (String origin : frontendUrl.split(",")) {
+                String o = origin.trim();
+                if (o.endsWith("/")) {
+                    o = o.substring(0, o.length() - 1);
+                }
+                if (!o.isEmpty()) {
+                    allowedOrigins.add(o);
+                }
+            }
+        }
+        
+        // Add default local origins
+        allowedOrigins.add("http://localhost:5173");
+        allowedOrigins.add("http://localhost:3000");
+        allowedOrigins.add("http://localhost:80");
+        
+        config.setAllowedOrigins(allowedOrigins);
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setExposedHeaders(List.of("Authorization", "X-User-Id"));
