@@ -26,7 +26,12 @@ public class RedisMessageSubscriber implements MessageListener {
             String roomToken = roomMessage.getRoomToken();
 
             // Route to targeted peer or broadcast to entire room
-            if (roomMessage.getTargetPeerId() != null && !roomMessage.getTargetPeerId().isBlank()) {
+            // WebRTC messages are broadcast to all and filtered client-side to avoid Spring User destination/Principal mismatches
+            boolean isWebRTC = "WEBRTC_OFFER".equals(roomMessage.getType())
+                || "WEBRTC_ANSWER".equals(roomMessage.getType())
+                || "ICE_CANDIDATE".equals(roomMessage.getType());
+
+            if (!isWebRTC && roomMessage.getTargetPeerId() != null && !roomMessage.getTargetPeerId().isBlank()) {
                 messagingTemplate.convertAndSendToUser(
                     roomMessage.getTargetPeerId(),
                     "/queue/room/" + roomToken,

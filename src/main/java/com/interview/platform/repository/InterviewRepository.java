@@ -42,5 +42,25 @@ public interface InterviewRepository extends JpaRepository<Interview, UUID> {
     """)
     List<Interview> findAllByParticipant(UUID userId, String email);
 
+    @Query("""
+        SELECT i FROM Interview i
+        LEFT JOIN FETCH i.candidate
+        LEFT JOIN FETCH i.interviewer
+        WHERE i.interviewer.id = :userId 
+           OR i.interviewerEmail = :email
+        ORDER BY i.scheduledAt DESC
+    """)
+    List<Interview> findAllByInterviewer(UUID userId, String email);
+
+    @Query("""
+        SELECT i FROM Interview i
+        LEFT JOIN FETCH i.candidate
+        LEFT JOIN FETCH i.interviewer
+        WHERE i.candidate.id = :userId 
+           OR i.candidateEmail = :email
+        ORDER BY i.scheduledAt DESC
+    """)
+    List<Interview> findAllByCandidate(UUID userId, String email);
+
     long countByStatus(InterviewStatus status);
 }

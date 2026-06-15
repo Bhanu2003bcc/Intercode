@@ -253,8 +253,13 @@ public class InterviewService {
                     .stream()
                     .map(InterviewDTO::from)
                     .toList();
-            case INTERVIEWER, CANDIDATE -> interviewRepository
-                    .findAllByParticipant(requestingUser.getId(), requestingUser.getEmail())
+            case INTERVIEWER -> interviewRepository
+                    .findAllByInterviewer(requestingUser.getId(), requestingUser.getEmail())
+                    .stream()
+                    .map(InterviewDTO::from)
+                    .toList();
+            case CANDIDATE -> interviewRepository
+                    .findAllByCandidate(requestingUser.getId(), requestingUser.getEmail())
                     .stream()
                     .map(InterviewDTO::from)
                     .toList();

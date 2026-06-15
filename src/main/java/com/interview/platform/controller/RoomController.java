@@ -32,10 +32,14 @@ public class RoomController {
                                   SimpMessageHeaderAccessor headerAccessor) {
         Map<String, Object> attrs = headerAccessor.getSessionAttributes();
 
-        // Enrich message with sender identity from WebSocket session
+        // Enrich message with sender identity from WebSocket session only if not already set by client
         if (attrs != null) {
-            message.setSenderId((String) attrs.getOrDefault("userId", "unknown"));
-            message.setSenderName((String) attrs.getOrDefault("fullName", "Anonymous"));
+            if (message.getSenderId() == null || message.getSenderId().isBlank()) {
+                message.setSenderId((String) attrs.getOrDefault("userId", "unknown"));
+            }
+            if (message.getSenderName() == null || message.getSenderName().isBlank()) {
+                message.setSenderName((String) attrs.getOrDefault("fullName", "Anonymous"));
+            }
         }
         message.setRoomToken(roomToken);
         message.setTimestamp(System.currentTimeMillis());
