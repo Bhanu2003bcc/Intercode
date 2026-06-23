@@ -15,6 +15,7 @@
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/Provider.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/Role.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/SubmissionStatus.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/EmailAlreadyExistsException.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/InterviewConflictException.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/InterviewNotFoundException.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/Interview.java
