@@ -85,14 +85,23 @@ app:
     memory-limit: 128m
     cpu-limit: "0.5"
 
+  verification:
+    token:
+      expiry-hours: 24
+
+  rate-limit:
+    register:
+      capacity: 5
+      refill-hours: 1
+
 server:
   port: 8080
   error:
-    include-message: always
+    include-message: never
 
 logging:
   level:
-    com.interview: DEBUG
+    com.interview: INFO
     org.springframework.websocket: INFO
     org.springframework.security: INFO
     com.zaxxer.hikari: DEBUG
@@ -106,4 +115,8 @@ management:
         include: health,info,metrics
   endpoint:
     health:
-      show-details: always
+      show-details: when-authorized
+
+  
+# app.
+  

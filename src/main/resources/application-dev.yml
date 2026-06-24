@@ -4,6 +4,10 @@ spring:
     username: ${DB_USERNAME:postgres.xkpthxybrozesdcjeubk}
     password: ${DB_PASSWORD:GOuXzlJrEkmEJazM}
 
+  jpa:
+    hibernate:
+      ddl-auto: update
+
   flyway:
     locations: classpath:db/migration/core,classpath:db/migration/dev
 
@@ -24,3 +28,23 @@ spring:
 app:
   jwt:
     secret: ${JWT_SECRET:7a9f3c2e8b1d6f4a0e5c9b7d3f1a8e6c2b4d7f9a1c3e5b8d0f2a4c6e8b1d3f56}
+
+  cors:
+    allowed-origins:
+      - ${FRONTEND_URL:http://localhost:5173}
+      - http://localhost:3000
+
+  code-exec:
+    timeout-seconds: 10
+    work-dir: /tmp/code_exec
+    memory-limit: 128m
+    cpu-limit: "0.5"
+
+  verification:
+    token:
+      expiry-hours: 24
+
+  rate-limit:
+    register:
+      capacity: 5
+      refill-hours: 1

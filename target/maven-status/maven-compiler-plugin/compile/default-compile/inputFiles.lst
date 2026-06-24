@@ -1,5 +1,7 @@
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/GlobalException/GlobalExceptionHandler.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/InterviewPlatformApplication.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/CorsConfig.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/RateLimiterConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/RedisConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/SecurityConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/WebSocketConfig.java
@@ -15,13 +17,18 @@
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/Provider.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/Role.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/enums/SubmissionStatus.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/event/EmailVerificationListener.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/event/UserRegisteredEvent.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/EmailAlreadyExistsException.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/InterviewConflictException.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/InterviewNotFoundException.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/exception/InvalidTokenException.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/EmailVerificationToken.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/Interview.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/RoomMessage.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/Submission.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/models/User.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/repository/EmailVerificationTokenRepository.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/repository/InterviewRepository.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/repository/SubmissionRepository.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/repository/UserRepository.java
@@ -43,6 +50,7 @@
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/EmailService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/InterviewService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/JwtService.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/RateLimiterService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/util/HashGenerator.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/util/InterviewCreatedEvent.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/util/InterviewEventHandler.java
