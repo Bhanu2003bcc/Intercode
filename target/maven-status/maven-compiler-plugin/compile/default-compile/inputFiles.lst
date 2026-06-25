@@ -1,5 +1,6 @@
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/GlobalException/GlobalExceptionHandler.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/InterviewPlatformApplication.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/AsyncConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/CorsConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/RateLimiterConfig.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/config/RedisConfig.java
