@@ -48,6 +48,7 @@
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/CodeExecutionService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/CustomUserDetailsService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/EmailService.java
+/home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/EmailTokenService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/InterviewService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/JwtService.java
 /home/lol/Interview platfrom/backend/src/main/java/com/interview/platform/service/RateLimiterService.java

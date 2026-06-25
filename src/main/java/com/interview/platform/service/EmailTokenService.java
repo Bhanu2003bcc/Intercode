@@ -24,7 +24,7 @@ public class EmailTokenService {
     @Value("${app.verification.token.expiry-hours:24}")
     private int tokenExpiryHours;
 
-    @Transactional // 👈 transaction opens and closes here only
+    @Transactional
     public String createVerificationToken(User user) {
         tokenRepository.deleteByUserId(user.getId());
 
@@ -40,6 +40,6 @@ public class EmailTokenService {
         tokenRepository.save(verificationToken);
         log.info("Token saved for user: {}", user.getEmail());
 
-        return rawToken; // transaction commits here — connection released
+        return rawToken;
     }
 }

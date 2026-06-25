@@ -159,6 +159,10 @@ public class EmailService {
             String rawToken = emailTokenService.createVerificationToken(user);
 
             String verifyUrl = frontendUrl + "/verify-email?token=" + rawToken;
+            log.info("Frontend URL: {}", frontendUrl);        // 👈 add
+            log.info("From email: {}", fromEmail);            // 👈 add
+            log.info("Verify URL: {}", verifyUrl);            // 👈 add
+
 
             SimpleMailMessage message = new SimpleMailMessage();
             message.setFrom(fromEmail);
@@ -166,6 +170,7 @@ public class EmailService {
             message.setSubject("Verify your email — Interview Platform");
             message.setText(buildEmailBody(user.getFullName(), verifyUrl));
 
+            log.info("Attempting mailSender.send()...");
             mailSender.send(message); // 👈 called OUTSIDE transaction — no connection held
             log.info("Verification email sent to {}", user.getEmail());
 
