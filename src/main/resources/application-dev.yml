@@ -1,8 +1,11 @@
 spring:
   datasource:
-    url: ${DB_URL:jdbc:postgresql://aws-1-ap-southeast-2.pooler.supabase.com:5432/postgres?user=postgres.xkpthxybrozesdcjeubk&password=GOuXzlJrEkmEJazM&sslmode=require}
-    username: ${DB_USERNAME:postgres.xkpthxybrozesdcjeubk}
-    password: ${DB_PASSWORD:GOuXzlJrEkmEJazM}
+  # jdbc:postgresql://aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres?user=postgres.ilkogzpgtrtlwehpqjut&password=xKWX3Yqvk7y4wg8V&sslmode=require}
+  # xKWX3Yqvk7y4wg8V
+  # postgres.ilkogzpgtrtlwehpqjut
+    url: ${DB_URL:jdbc:postgresql://aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres?user=postgres.ilkogzpgtrtlwehpqjut&password=xKWX3Yqvk7y4wg8V&sslmode=require}
+    username: ${DB_USERNAME:postgres.i`lkogzpgtrtlwehpqjut}
+    password: ${DB_PASSWORD:xKWX3Yqvk7y4wg8V}
 
   jpa:
     hibernate:
