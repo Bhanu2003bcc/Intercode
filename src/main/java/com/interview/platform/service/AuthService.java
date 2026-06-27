@@ -58,7 +58,7 @@ public class AuthService {
         .fullName(request.fullName())
         .role(Objects.requireNonNullElse(request.role(), Role.CANDIDATE))
         .provider(Provider.LOCAL)
-        .isActive(false) 
+        .isActive(true) 
         .build();
 
     userRepository.save(user);

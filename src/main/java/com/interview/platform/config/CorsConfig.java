@@ -19,7 +19,7 @@ public class CorsConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
         List<String> allowedOrigins = new java.util.ArrayList<>();
-        
+
         if (frontendUrl != null && !frontendUrl.trim().isEmpty()) {
             for (String origin : frontendUrl.split(",")) {
                 String o = origin.trim();
@@ -31,12 +31,12 @@ public class CorsConfig {
                 }
             }
         }
-        
+
         // Add default local origins
         allowedOrigins.add("http://localhost:5173");
         allowedOrigins.add("http://localhost:3000");
         allowedOrigins.add("http://localhost:80");
-        
+
         config.setAllowedOrigins(allowedOrigins);
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));

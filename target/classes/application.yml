@@ -85,11 +85,10 @@ app:
       - ${FRONTEND_URL:http://localhost:5173}
       - http://localhost:3000
 
-  code-exec:
-    timeout-seconds: 10
-    work-dir: /tmp/code_exec
-    memory-limit: 128m
-    cpu-limit: "0.5"
+  piston:
+    base-url: ${PISTON_API_URL:https://emkc.org/api/v2/piston}
+    timeout-seconds: ${PISTON_TIMEOUT_SECONDS:15}
+    max-retries: ${PISTON_MAX_RETRIES:2}
 
   verification:
     token:
