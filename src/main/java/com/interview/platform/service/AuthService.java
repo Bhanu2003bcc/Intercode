@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.interview.platform.dto.UserDTO;
 import com.interview.platform.enums.Provider;
 import com.interview.platform.enums.Role;
-import com.interview.platform.event.UserRegisteredEvent;
+// import com.interview.platform.event.UserRegisteredEvent;
 import com.interview.platform.exception.EmailAlreadyExistsException;
 import com.interview.platform.exception.InvalidTokenException;
 import com.interview.platform.models.EmailVerificationToken;
@@ -36,7 +36,7 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
-    private final ApplicationEventPublisher eventPublisher;
+    // private final ApplicationEventPublisher eventPublisher;
     private final EmailVerificationTokenRepository tokenRepository;
 
 
@@ -64,7 +64,7 @@ public class AuthService {
     userRepository.save(user);
 
     // Async — don't block HTTP thread for email sending
-    eventPublisher.publishEvent(new UserRegisteredEvent(user));
+    // eventPublisher.publishEvent(new UserRegisteredEvent(user));
 
     String token = jwtService.generateToken(user);
     return new AuthResponse(token, UserDTO.from(user));

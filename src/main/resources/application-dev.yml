@@ -1,11 +1,11 @@
 spring:
   datasource:
-  # jdbc:postgresql://aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres?user=postgres.ilkogzpgtrtlwehpqjut&password=xKWX3Yqvk7y4wg8V&sslmode=require}
-  # xKWX3Yqvk7y4wg8V
-  # postgres.ilkogzpgtrtlwehpqjut
-    url: ${DB_URL:jdbc:postgresql://aws-1-ap-northeast-2.pooler.supabase.com:5432/postgres?user=postgres.ilkogzpgtrtlwehpqjut&password=xKWX3Yqvk7y4wg8V&sslmode=require}
-    username: ${DB_USERNAME:postgres.i`lkogzpgtrtlwehpqjut}
-    password: ${DB_PASSWORD:xKWX3Yqvk7y4wg8V}
+    url: ${DB_URL:jdbc:postgresql://aws-0-ap-southeast-1.pooler.supabase.com:5432/postgres?user=postgres.aphjsebfulpmazdfhwnz&password=m86HsuVxH9K8HdNN&sslmode=require}
+    username: ${DB_USERNAME:postgres.aphjsebfulpmazdfhwnz}
+    password: ${DB_PASSWORD:m86HsuVxH9K8HdNN}
+    hikari:
+      maximum-pool-size: 2
+      minimum-idle: 1
 
   jpa:
     hibernate:
@@ -13,6 +13,7 @@ spring:
 
   flyway:
     locations: classpath:db/migration/core,classpath:db/migration/dev
+    out-of-order: true
 
   security:
     oauth2:
@@ -25,8 +26,18 @@ spring:
   mail:
     host: ${SMTP_HOST:smtp.gmail.com}
     port: ${SMTP_PORT:587}
-    username: ${SMTP_USERNAME:bhanupratapsingh2939522@gmail.com}
-    password: ${SMTP_PASSWORD:aucyclwpqymkfxrf}
+    username: ${SMTP_USERNAME:your-email@gmail.com}
+    password: ${SMTP_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          connectiontimeout: 10000
+          timeout: 10000
+          writetimeout: 10000
 
 app:
   jwt:
@@ -35,7 +46,7 @@ app:
   cors:
     allowed-origins:
       - ${FRONTEND_URL:http://localhost:5173}
-      - http://localhost:3000
+      - https://selectionsure.vercel.app
 
   code-exec:
     timeout-seconds: 10

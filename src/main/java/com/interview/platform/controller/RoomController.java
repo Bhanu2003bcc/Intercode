@@ -32,7 +32,6 @@ public class RoomController {
                                   SimpMessageHeaderAccessor headerAccessor) {
         Map<String, Object> attrs = headerAccessor.getSessionAttributes();
 
-        // Enrich message with sender identity from WebSocket session only if not already set by client
         if (attrs != null) {
             if (message.getSenderId() == null || message.getSenderId().isBlank()) {
                 message.setSenderId((String) attrs.getOrDefault("userId", "unknown"));
